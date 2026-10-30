@@ -357,10 +357,147 @@
 
     .hackathon-title-pill {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 10px;
       border-left: 2px solid var(--ibm-blue);
-      padding-left: 10px;
+      padding-left: 12px;
     }
+    /* -------------------------------------------------------------
+       IBM BOB OFFICIAL ASSET STYLES
+       ------------------------------------------------------------- */
+    .bob-header-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(15, 98, 254, 0.5));
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .hackathon-title-pill:hover .bob-header-icon {
+      transform: scale(1.15) rotate(-5deg);
+    }
+
+    .hackathon-title-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-bob-showcase {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 28px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, rgba(15, 98, 254, 0.08), rgba(165, 110, 255, 0.08));
+      border: 1px solid rgba(15, 98, 254, 0.3);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      max-width: 580px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-bob-showcase:hover {
+      border-color: rgba(0, 240, 255, 0.5);
+      box-shadow: 0 12px 32px rgba(15, 98, 254, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .bob-avatar-circle {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(15, 98, 254, 0.25) 0%, rgba(7, 10, 18, 0.85) 75%);
+      border: 2px solid rgba(15, 98, 254, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      box-shadow: 0 0 20px rgba(15, 98, 254, 0.35);
+    }
+
+    .bob-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+      animation: bobFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes bobFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .bob-live-pulse {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 12px;
+      height: 12px;
+      background: var(--ibm-emerald);
+      border: 2px solid #070a12;
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--ibm-emerald);
+    }
+
+    .bob-showcase-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .bob-showcase-title {
+      font-size: 14px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-tag {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      padding: 2px 7px;
+      background: rgba(15, 98, 254, 0.2);
+      border: 1px solid rgba(15, 98, 254, 0.4);
+      color: var(--ibm-cyan);
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.05em;
+    }
+
+    .bob-showcase-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .bob-showcase-desc strong {
+      color: var(--text-light);
+    }
+
+    .tech-icon-bob {
+      background: linear-gradient(135deg, rgba(15, 98, 254, 0.2), rgba(165, 110, 255, 0.15)) !important;
+      border-color: rgba(15, 98, 254, 0.5) !important;
+    }
+
+    .tech-bob-img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(15, 98, 254, 0.5));
+      transition: transform 0.3s ease;
+    }
+
+    .tech-card:hover .tech-bob-img {
+      transform: scale(1.15) translateY(-2px);
+    }
+
 
     .hackathon-title-pill .title-main {
       font-size: 14px;
@@ -2046,8 +2183,11 @@
           </div>
         </a>
         <div class="hackathon-title-pill">
-          <span class="title-main">IBM Bob Hackathon</span>
-          <span class="title-sub">with IBM SkillsBuild</span>
+          <img src="IBMBob-official.svg" alt="IBM Bob" class="bob-header-icon" />
+          <div class="hackathon-title-text">
+            <span class="title-main">IBM Bob Hackathon</span>
+            <span class="title-sub">with IBM SkillsBuild</span>
+          </div>
         </div>
       </div>
 
@@ -2133,12 +2273,31 @@
                 <span>📋 Guidelines</span>
               </a>
             </div>
+
+            <!-- Hero Bob Showcase Card -->
+            <div class="hero-bob-showcase">
+              <div class="bob-avatar-circle">
+                <img src="IBMBob-official.svg" alt="IBM Bob - Official AI Hackathon Assistant" class="bob-avatar-img" />
+                <span class="bob-live-pulse" title="IBM Bob Online"></span>
+              </div>
+              <div class="bob-showcase-content">
+                <div class="bob-showcase-title">
+                  <strong>Meet IBM Bob</strong> <span class="badge-tag">AI Hackathon Co-Pilot</span>
+                </div>
+                <p class="bob-showcase-desc">
+                  IBM's conversational agentic AI assistant on <strong>IBM watsonx</strong> powered by <strong>IBM Granite</strong>. Designed for live multi-agent prototyping, reasoning, and automated code generation.
+                </p>
+              </div>
+            </div>
           </div>
 
           <!-- Hero Right: Live Card & Countdown -->
           <div class="hero-card">
             <div class="card-header-label">
-              <span class="live-status"><span class="pulse-dot"></span> Live Hackathon</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="IBMBob-official.svg" alt="IBM Bob" style="width: 22px; height: 22px; object-fit: contain; filter: drop-shadow(0 1px 4px rgba(15, 98, 254, 0.6));" />
+                <span class="live-status"><span class="pulse-dot"></span> Live Hackathon</span>
+              </div>
               <span class="badge-pill" style="margin-bottom:0; padding:3px 10px; font-size:11px;">Bengaluru 2026</span>
             </div>
 
@@ -2382,7 +2541,9 @@
 
         <div class="tech-cards-grid">
           <div class="glass-card tech-card reveal">
-            <div class="tech-icon-box">🤖</div>
+            <div class="tech-icon-box tech-icon-bob">
+              <img src="IBMBob-official.svg" alt="IBM Bob Official AI Mascot" class="tech-bob-img" />
+            </div>
             <h4>IBM Bob</h4>
             <p>
               An intelligent agentic AI developer tool designed for rapid workflow orchestration, tool execution, and collaborative autonomous agent prototyping.
@@ -3177,7 +3338,10 @@
               </p>
             </div>
             <div class="sub-col">
-              <div class="sub-col-num">DELIVERABLE 03</div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <div class="sub-col-num">DELIVERABLE 03</div>
+                <img src="IBMBob-official.svg" alt="IBM Bob Story" style="width: 28px; height: 28px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(15, 98, 254, 0.4));" />
+              </div>
               <h4>3. The Bob Story &amp; Architecture</h4>
               <p>
                 A compelling walkthrough (presentation or video demo) detailing how IBM Bob was utilized to architect, iterate, and coordinate the agentic solution. Highlight agent delegation, tool calling, and human-in-the-loop validation loops.
@@ -3417,7 +3581,10 @@
     <div class="container">
       <div class="footer-top-grid">
         <div class="footer-brand-info">
-          <h4>Inter-Institute IBM Bob Hackathon</h4>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <img src="IBMBob-official.svg" alt="IBM Bob" style="width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(15, 98, 254, 0.5));" />
+            <h4 style="margin-bottom: 0;">Inter-Institute IBM Bob Hackathon</h4>
+          </div>
           <p>
             with IBM SkillsBuild &bull; Hosted at Sambhram Institute of Technology, Bengaluru. Fostering next-generation Agentic AI development for Karnataka's youth.
           </p>
