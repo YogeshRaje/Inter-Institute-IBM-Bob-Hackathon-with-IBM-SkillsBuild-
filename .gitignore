@@ -1,0 +1,17 @@
+# Operating System & Temporary Files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*~
+
+# Editor / IDE Files
+.vscode/
+.idea/
+.bob/
+
+# Binary / Build Artifacts
+*.exe
+*.dll
+*.log
